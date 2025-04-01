@@ -3,7 +3,6 @@
 
 MemoryMap optimizeMemoryLayout(const MatrixDimensions& dims) {
     MemoryMap map;
-    // MEMORY_ROW_SIZE is now defined in the header
     
     // Calculate total elements in each matrix
     int sizeA = dims.M * dims.K;

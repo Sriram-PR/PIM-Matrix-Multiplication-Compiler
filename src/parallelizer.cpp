@@ -1,7 +1,7 @@
 #include "pim_compiler.h"
 #include <algorithm>
 #include <iostream>
-#include <cmath> // For std::ceil
+#include <cmath>
 
 std::vector<WorkAssignment> distributeWork(const MatrixDimensions& dims, int numCores) {
     std::vector<WorkAssignment> assignments;

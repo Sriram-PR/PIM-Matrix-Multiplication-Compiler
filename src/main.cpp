@@ -6,7 +6,7 @@
 #include <chrono>
 #include <bitset>
 
-// Convert hex string to binary string for verification (unchanged)
+// Convert hex string to binary string for verification
 std::string hexToBinary(const std::string& hex) {
     std::string binary;
     for (char c : hex) {
@@ -34,7 +34,7 @@ std::string hexToBinary(const std::string& hex) {
     return binary;
 }
 
-// Write three-address code to a separate file (unchanged)
+// Write three-address code to a separate file
 void writeThreeAddressCodeToFile(const ThreeAddressCode& tac, const std::string& filename) {
     std::ofstream tacFile(filename);
     if (!tacFile.is_open()) {
@@ -53,7 +53,6 @@ void writeThreeAddressCodeToFile(const ThreeAddressCode& tac, const std::string&
     std::cout << "Three-address code written to " << filename << std::endl;
 }
 
-// Print help message (updated to include parser option)
 void printHelp(const char* programName) {
     std::cout << "PIM Matrix Multiplication Compiler" << std::endl;
     std::cout << "Usage: " << programName << " <input_file> [options]" << std::endl;
