@@ -337,11 +337,10 @@ Potential enhancements:
 
 This project is licensed under the [GPL-3.0 license](https://github.com/Sriram-PR/PIM-Matrix-Multiplication-Compiler/blob/main/LICENSE).
 
-## About the Project
-
-This compiler was developed as part of a hackathon challenge to implement a compiler targeting the specific PIM instruction set architecture described by Connolly et al. The goal was to demonstrate how C/C++ matrix multiplication code can be efficiently translated into specialized PIM instructions to leverage the unique capabilities of Processing-in-Memory hardware. The project showcases the potential of PIM architectures for accelerating data-intensive operations while minimizing the memory bottleneck.
-
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
+## About the Project
+
+This compiler was developed as part of a hackathon challenge to implement a compiler targeting the specific PIM instruction set architecture described by Connolly et al. The goal was to demonstrate how C/C++ matrix multiplication code can be efficiently translated into specialized PIM instructions to leverage the unique capabilities of Processing-in-Memory hardware. The project showcases the potential of PIM architectures for accelerating data-intensive operations while minimizing the memory bottleneck.
