@@ -1,10 +1,12 @@
 # PIM Matrix Multiplication Compiler
 
-A specialized compiler for transforming C/C++ matrix multiplication code into optimized instructions for Processing-in-Memory (PIM) architectures.
+A specialized compiler for transforming C++ matrix multiplication code into the 24-bit instruction format specified by Connolly et al.'s Processing-in-Memory (PIM) architecture. This project was developed for a hackathon that required implementing this specific instruction set architecture (ISA).
 
 ## Overview
 
-The PIM Matrix Multiplication Compiler analyzes matrix multiplication algorithms in C/C++ source code and generates low-level instruction sequences for execution on Processing-in-Memory hardware. This approach moves computation closer to where data is stored, reducing the memory bottleneck in matrix operations and enabling more efficient parallel computation.
+This compiler translates matrix multiplication algorithms in C++ source code into optimized instruction sequences for execution on a Processing-in-Memory hardware architecture. The implementation generates instructions following the ISA format described in the paper "Flexible Instruction Set Architecture for Programmable Look-up Table based Processing-in-Memory" (Connolly et al., 2021), which is included in this repository.
+
+The project specifically targets the 24-bit instruction format with operation codes (NoOp, PROG, EXE, END) in bits 18-17, core pointer in bits 16-11, read/write flags, and 9-bit address field. While the paper describes a microcoded Controller/Sequencer design with ~120-bit control words, this compiler focuses on generating the appropriate instruction sequences that would be consumed by such a controller.
 
 ## Key Features
 
@@ -123,10 +125,30 @@ for (int k = 0; k < K; k++) {
 
 ### Prerequisites
 
-- C++14 compatible compiler
-- CMake 3.10 or newer
-- Python 3.6+ (for simulator)
-- NumPy (for simulator validation)
+The following packages are required to build and run the project:
+
+```bash
+apt-get update && apt-get install -y \
+    lsb-release \
+    build-essential \
+    cmake \
+    git \
+    g++ \
+    libgmp-dev \
+    libz3-dev \
+    libzstd-dev \
+    python3 \
+    python3-numpy \
+    libsystemc \
+    libsystemc-dev
+```
+
+These dependencies provide:
+- Essential build tools and C++ compiler
+- CMake build system
+- Python3 and NumPy for simulation and validation
+- SystemC libraries for hardware architecture simulation
+- Support libraries for optimization and high-precision operations
 
 ### Building from Source
 
@@ -311,10 +333,15 @@ Potential enhancements:
 - Extended ISA for more operations
 - Integration with higher-level frameworks
 
+## License
+
+This project is licensed under the [GPL-3.0 license](https://github.com/Sriram-PR/PIM-Matrix-Multiplication-Compiler/blob/main/LICENSE).
+
+## About the Project
+
+This compiler was developed as part of a hackathon challenge to implement a compiler targeting the specific PIM instruction set architecture described by Connolly et al. The goal was to demonstrate how C/C++ matrix multiplication code can be efficiently translated into specialized PIM instructions to leverage the unique capabilities of Processing-in-Memory hardware. The project showcases the potential of PIM architectures for accelerating data-intensive operations while minimizing the memory bottleneck.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
-
-This project is licensed under the [GPL-3.0 license](https://github.com/Sriram-PR/PIM-Matrix-Multiplication-Compiler/blob/main/LICENSE).
